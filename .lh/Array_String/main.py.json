@@ -1,0 +1,46 @@
+{
+    "sourceFile": "Array_String/main.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1720749292490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1720749424548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,6 @@\n+# Search\n+def search(arr: int[], target: int, length: int):\n+    for i in range(length):\n+        if arr[i] == target:\n+            return i\n+        return -1\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720749565096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,5 +2,5 @@\n def search(arr: int[], target: int, length: int):\n     for i in range(length):\n         if arr[i] == target:\n             return i\n-        return -1\n+    return -1\n"
+                },
+                {
+                    "date": 1720749706035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,4 +3,10 @@\n     for i in range(length):\n         if arr[i] == target:\n             return i\n     return -1\n+\n+# Insert\n+def insert(arr: int[], index: int, value: int, length: int):\n+    # 最後の要素からindexまで右シフトする\n+    for i in range(length-1, index-1, -1):\n+        arr[i+i] = arr[i]\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720749761783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,4 +9,5 @@\n def insert(arr: int[], index: int, value: int, length: int):\n     # 最後の要素からindexまで右シフトする\n     for i in range(length-1, index-1, -1):\n         arr[i+i] = arr[i]\n+    arr[index] = value\n"
+                },
+                {
+                    "date": 1720750382165,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,6 +8,6 @@\n # Insert\n def insert(arr: int[], index: int, value: int, length: int):\n     # 最後の要素からindexまで右シフトする\n     for i in range(length-1, index-1, -1):\n-        arr[i+i] = arr[i]\n+        arr[i+1] = arr[i]\n     arr[index] = value\n"
+                },
+                {
+                    "date": 1720751014889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,4 +10,8 @@\n     # 最後の要素からindexまで右シフトする\n     for i in range(length-1, index-1, -1):\n         arr[i+1] = arr[i]\n     arr[index] = value\n+\n+# Insert at the end\n+def insert_at_the_end(arr: int[], value: int, length: int):\n+    arr[length] = value\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1720751253786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,5 +13,5 @@\n     arr[index] = value\n \n # Insert at the end\n def insert_at_the_end(arr: int[], value: int, length: int):\n-    arr[length] = value\n\\ No newline at end of file\n+    arr[length] = value\n"
+                }
+            ],
+            "date": 1720749292490,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "BasicSyntax/if.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1717721297232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1717721297232,
+            "name": "Commit-0",
+            "content": "# 修正後の例\n# nが5より大きい場合、positive\n# nが0未満の場合、negative\n# nが0の場合、zero\n\nn = 5\n\nif n > 0:\n    print(\"n is positive\")\nelif n < 0:\n    print(\"n is negative\")\nelse:\n    print(\"n is zero\")\n\n# 'and' 演算子の使用\n# 'or' 演算子の使用\n# 'not' 演算子の使用\n# Pythonでは範囲を条件にする時に以下のようにできます\n\nx, y = 5, 10\nif x > 0 and y > 0:\n    print(\"Both n and m are positive.\")\n\nx = -5\nif x < 0 and y > 0:\n    print(\"Either x is positive or y is negative.\")\n\nif not x > 0:\n    print(\"x is not positive.\")\n\nif 0 < x < 10:\n    print(\"n is between 0 and 10\")\n"
+        }
+    ]
+}

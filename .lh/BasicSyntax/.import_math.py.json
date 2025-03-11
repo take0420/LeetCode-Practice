@@ -1,0 +1,18 @@
+{
+    "sourceFile": "BasicSyntax/.import_math.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1718593043212,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1718593043212,
+            "name": "Commit-0",
+            "content": "import math\n\nprint(math.fmod(-10, 3))\n"
+        }
+    ]
+}
