@@ -1,35 +1,40 @@
-jclass Solution:
+class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()  # 配列をソートしておく（重複を防ぐため）
+        nums.sort()
         triplets = []
+        length = len(nums)
 
-        for i in range(len(nums) - 2):
-            # 同じ数字が続く場合はスキップ（重複回避）
-            if i > 0 and nums[i] == nums[i - 1]:
+        for i in range(length - 2):
+            current_num = nums[i]
+
+            # 最初の数字が正なら、それ以降の合計は必ず正（0より大きい）になるため終了
+            if current_num > 0:
+                break
+
+            # 同じ数値をスキップ（重複回避）
+            if i > 0 and current_num == nums[i - 1]:
                 continue
 
-            left, right = i + 1, len(nums) - 1
+            left, right = i + 1, length - 1
 
             while left < right:
-                current_sum = nums[i] + nums[left] + nums[right]
+                total_sum = current_num + nums[left] + nums[right]
 
-                if current_sum == 0:
-                    # 合計が0なら組み合わせを記録
-                    triplets.append([nums[i], nums[left], nums[right]])
+                if total_sum == 0:
+                    triplets.append([current_num, nums[left], nums[right]])
 
-                    # 重複する組み合わせをスキップ
+                    # 重複を避けるため、同じ数値をスキップ
                     while left < right and nums[left] == nums[left + 1]:
                         left += 1
                     while left < right and nums[right] == nums[right - 1]:
                         right -= 1
 
-                    # 次の候補にポインタを進める
                     left += 1
                     right -= 1
 
-                elif current_sum < 0:
-                    left += 1  # 合計が小さいので左ポインタを進める
+                elif total_sum < 0:
+                    left += 1
                 else:
-                    right -= 1  # 合計が大きいので右ポインタを戻す
+                    right -= 1
 
         return triplets
