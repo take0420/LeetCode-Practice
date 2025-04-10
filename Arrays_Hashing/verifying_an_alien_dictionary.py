@@ -1,21 +1,22 @@
 class Solution:
     def isAlienSorted(self, words: List[str], order: str) -> bool:
-        # 各文字をエイリアン言語での順位（インデックス）に変換する辞書を作成
-        char_order = {char: idx for idx, char in enumerate(order)}
-
-        # 隣り合う単語同士を比較する
-        for word1, word2 in zip(words, words[1:]):
-            # 2つの単語のうち、短い方の長さまで文字を比較
-            for i in range(min(len(word1), len(word2))):
-                if word1[i] != word2[i]:
-                    # 異なる文字が見つかった場合、エイリアン言語の順序をもとに大小を判断
-                    if char_order[word1[i]] > char_order[word2[i]]:
+        order_dict = [0] * len(order)
+        
+        for i in range(len(order)):
+            order_dict[ord(order[i]) - ord('a')] = i
+            
+        for i in range(1, len(words)):
+            w1 = words[i-1]
+            w2 = words[i]
+            min_len = min(len(w1), len(w2))
+            
+            if w1[:min_len] == w2[:min_len] and len(w1) > len(w2):
+                return False
+            
+            for j in range(min_len):
+                if w1[j] != w2[j]:
+                    if order_dict[ord(w1[j]) - ord('a')] > order_dict[ord(w2[j]) - ord('a')]:
                         return False
-                    # ここで比較が終了するので、内側のループを抜ける
                     break
-            else:
-                # 全ての文字が同じだった場合、
-                # 長い単語が先に来るのは正しくないので、その場合はFalseを返す
-                if len(word1) > len(word2):
-                    return False
+            
         return True
