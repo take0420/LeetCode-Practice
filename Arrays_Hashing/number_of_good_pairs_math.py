@@ -5,5 +5,4 @@ class Solution:
 
         for num, c in cnt.items():
             ans += c * (c - 1) // 2
-
         return ans
